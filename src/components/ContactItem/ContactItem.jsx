@@ -1,19 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   StyledContactItem,
   StyledContactBtn,
 } from 'components/ContactItem/ContactItem.styled';
-import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/contacts/contactsOperations';
 
-export const ContactItem = ({ item: { name, number, id } }) => {
+export const ContactItem = ({ item: { name, phone, id } }) => {
   const dispatch = useDispatch();
 
   return (
     <StyledContactItem>
       <p>
-        {name}: {number}
+        {name}: {phone}
       </p>
       <StyledContactBtn
         type="button"
@@ -29,7 +29,7 @@ export const ContactItem = ({ item: { name, number, id } }) => {
 ContactItem.propTypes = {
   item: PropTypes.exact({
     name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
 };

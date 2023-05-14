@@ -9,7 +9,7 @@ export const StyledForm = styled.form`
 
 export const StyledInput = styled.input`
   display: inline-block;
-  padding: 45px 10px;
+  padding: 10px;
 `;
 
 export const StyledFormBtn = styled.button`
